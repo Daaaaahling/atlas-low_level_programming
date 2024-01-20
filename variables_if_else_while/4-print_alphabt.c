@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - Prints all letters except q and e
+ * main - Print all the letters except q and e
  *
  *  Return: 0
  */
@@ -11,9 +11,7 @@ int main(void)
 	for (n = 'a'; n <= 'z'; n++)
 	{
 		if (n != 'q' && n != 'e')
-		{
-		}
 	}
 	putchar('\n');
-	return (0)
+	return (0);
 }
