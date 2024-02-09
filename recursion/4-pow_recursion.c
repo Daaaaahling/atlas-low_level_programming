@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  *  _pow_recursion - recursively prints number to the power of another number
- *  @x: base int 
+ *  @x: base int
  *  @y: power int
  *  Return: the power of a number to a number
  */
