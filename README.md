@@ -1,1 +1,1 @@
-C - Static libraries
+Atlas Low Level Programming
