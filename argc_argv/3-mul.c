@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	if (argc == 3 && sscanf(argv[1], "%d", &num1) == 1 && sscanf(argv[2], "%d", &num2) == 1)
 	{
 		printf("%d\n", num1 * num2);
-		reurn (0);
+		return (0);
 	}
 	else
 	{
