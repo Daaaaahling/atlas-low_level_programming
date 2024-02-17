@@ -16,21 +16,21 @@ char *_strdup(char *original_str)
 	len = 0;
 
 
-	if (str == NULL)
+	if (original_str == NULL)
 		return (NULL);
 
 	while (original_str[len] != '\0')
 		len++;
 
-	duplicate_str = (char *)malloc((sizeof(char) * len) + 1);
-	
-	if (duplicate_str == NULL)
+	dup = (char *)malloc((sizeof(char) * len) + 1)
+
+	if (dup == NULL)
 	return (NULL);
 
 	for (i = 0; i < len; i++)
-		duplicate_str[i] = original_str[i];
+		dup[i] = original_str[i];
 
-	duplicate_str[len] = '\0';
+	dup[len] = '\0';
 
-       	return duplicate_str;
+       	return dup;
 }
