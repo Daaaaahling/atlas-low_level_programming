@@ -2,7 +2,8 @@
 #define DOG_H
 #include <stdio.h>
 /**
- *
+ * init_dog - initializes dog structure
+ * @d: pointer to dog structure
  * struct dog - dog's info
  * @name: dog's name
  * @age: dog's age
