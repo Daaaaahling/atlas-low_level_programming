@@ -4,7 +4,6 @@
 /**
  * init_dog - initializes dog structure
  * @d: pointer to dog structure
- * struct dog - dog's info
  * @name: dog's name
  * @age: dog's age
  * @owner: dog's owner
