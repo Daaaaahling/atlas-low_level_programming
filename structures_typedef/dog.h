@@ -7,6 +7,7 @@
  * @name: dog's name
  * @age: dog's age
  * @owner: dog's owner
+ * Return: pointer to new dog structure
  */
 typedef struct dog
 {
