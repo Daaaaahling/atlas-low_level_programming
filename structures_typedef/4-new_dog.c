@@ -7,7 +7,7 @@
  * @name: dog name
  * @age: dog age
  * @owner: owner name
- * Return: dog_t
+ * Return: pointer to new dog, or failure on NULL
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -26,6 +26,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return NULL;
 	}
 
+	strcpy(lilbowwow->name, name);
+	lilbowwow->age = age;
 	lilbowwow->owner = (char *)malloc(strlen(owner) + 1);
 	if (lilbowwow->owner == NULL)
 	{
@@ -33,9 +35,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(lilbowwow);
 		return NULL;
 	}
-	strncpy(lilbowwow->name, name, strlen(name) + 1);
-	strncpy(lilbowwow->owner, owner, strlen(owner) + 1);
-	lilbowwow->age = age;
+	strcpy(lilbowwow->owner, owner);
 
 	return (lilbowwow);
 }
