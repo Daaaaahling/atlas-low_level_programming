@@ -1,15 +1,13 @@
-#include <stdio.h>
-#include <string.h>
+#include <stddef.h>
 #include <stdlib.h>
 #include "dog.h"
-
-size_t my_strlen(const char *str)
-{
-	const char *s = str;
-	while (*s)
-		++s;
-	return s - str;
-}
+/**
+ * new_dog - creates new dog
+ * @name: lilbowwow
+ * @age: age
+ * @owner: owner
+ * Return: dog_t
+ */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -28,31 +26,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return NULL;
 	}
 
-	{
-		size_t i;
-		for (i = 0; i <= my_strlen(name); ++i)
-		{
-			lilbowwow->name[i] = name[i];
-		}
-
-	}
-	lilbowwow->age = age;
-	
 	lilbowwow->owner = (char *)malloc(strlen(owner) + 1);
-	if (lilbowwow->owner == NULL)
+	if (perrito->owner == NULL)
 	{
 		free(lilbowwow->name);
 		free(lilbowwow);
 		return NULL;
 	}
-
-	{
-		size_t i;
-		for (i = 0; i <= my_strlen(owner); ++i)
-		{
-			lilbowwow->owner[i] = owner[i];
-		}
-	}
+	strcpy(lilbowwow->name, name);
+	strcpy(lilbowwow->owner, owner);
+	lilbowwow->age = age;
 
 	return lilbowwow;
 }
