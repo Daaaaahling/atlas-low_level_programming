@@ -11,30 +11,31 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog_who_dis;
+	dog_t *lilbowwow;
 
-	new_dog_who_dis = malloc(sizeof(dog_t));
-	if (new_dog_who_dis == NULL)
+	lilbowwow = malloc(sizeof(dog_t));
+	if (lilbowwow == NULL)
 	{
 		return NULL;
 	}
 
-	new_dog_who_dis->name = strdup(name);
-	if (new_dog_who_dis->name == NULL)
+	lilbowwow->name = (char *)malloc(strlen(name) + 1);
+	if (lilbowwow->name == NULL)
 	{
-		free(new_dog_who_dis);
+		free(lilbowwow);
 		return NULL;
 	}
 
-	new_dog_who_dis->owner = strdup(owner);
-	if (new_dog_who_dis->owner == NULL)
+	lilbowwow->owner = (char *)malloc(strlen(owner) + 1);
+	if (lilbowwow->owner == NULL)
 	{
-		free(new_dog_who_dis->name);
-		free(new_dog_who_dis);
+		free(lilbowwow);
+		free(lilbowwow->name);
 		return NULL;
 	}
+	strcpy(lilbowwow->name, name);
+	strcpy(lilbowwow->owner, owner);
+	lilbowwow->age = age;
 
-	new_dog_who_dis->age = age;
-
-	return new_dog_who_dis;
+	return (lilbowwow);
 }
