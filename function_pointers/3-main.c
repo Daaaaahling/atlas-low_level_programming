@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "3-calc.h"
 /**
  * main - point that calculates
@@ -28,12 +29,12 @@ int main(int argc, char *argv[])
 			&& strcmp(u, "%") != 0)
 	{
 		printf("Error\n");
-		exit(99);
+		return 99;
 	}
 	if ((strcmp(u, "/") == 0 || strcmp(u, "%") == 0) && b == 0)
 	{
 		printf("Error\n");
-		exit(100);
+		return 100;
 	}
 	/**
 	 * a = atoi(argv[1]);
@@ -44,7 +45,7 @@ int main(int argc, char *argv[])
 	result = get_op_func(u)(a, b);
 	printf("%i\n", result);
 
-	return (0);
+	return 0;
 }
 
 
