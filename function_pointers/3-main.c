@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	 * u = argv[2]
 	 */
 	
-	result = get_op_func(op)(a, b)
+	result = get_op_func(u)(a, b);
 	printf("%i\n", result);
 
 	return (0);
