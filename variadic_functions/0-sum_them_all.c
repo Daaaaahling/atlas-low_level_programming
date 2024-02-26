@@ -13,6 +13,8 @@ int sum_them_all(const unsigned int n, ...)
 
 	va_list list;
 
+	va_start(list, n);
+
 	for (i = 0; i < n; i++)
 		result += va_arg(list, int);
 
