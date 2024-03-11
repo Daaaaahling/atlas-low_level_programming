@@ -19,11 +19,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1)
 		return (0);
 
-	buffer = malloc(sizeof(char) * num_letters + 1);
+	buffer = malloc(sizeof(char) * letters + 1);
 	if (buffer == NULL)
 		return (0);
 
-	read_count = read(fd, buffer, num_letters);
+	read_count = read(fd, buffer, letters);
 	if (read_count == -1)
 	{
 		free(buffer);
