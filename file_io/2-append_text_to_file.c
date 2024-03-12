@@ -5,7 +5,7 @@
  * @text_content: content to add to end of file
  * Return: 1 on success, on failure -1
  */
-int append_text_to_file(const char *filename, char *text_content)
+int append_text_to_file(const char *file_name, char *text_content)
 {
 	int file_descriptor, write_result, length = 0;
 
