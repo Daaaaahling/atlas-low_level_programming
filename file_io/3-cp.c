@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "main.h"
 #include <fcntl.h>
+#include <unistd.h>
 
 char *allocate_buffer(char *filename);
 void close_file(int file_descriptor);
@@ -10,16 +11,72 @@ void close_file(int file_descriptor);
  * @file: name of file buffer is storing chars for
  * Return: pointer to the newly-allocated buffer
  */
-char *allocate_buffer(char *filename)
+char *allocates_buffer(char *filename)
 {
-	char *buffer = malloc(1024 * sizeof(char));
+	char *buffer = malloc(1024);
 
 	if (buffer == NULL)
 	{
-		dprintf(STDERR_FILENO,
-				"Error: Can't write to %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 		exit(99);
 	}
 
-	return (buffer);
+	return buffer;
 }
+
+/**
+ * close_file - function used to close files
+ * @fd: file descriptor to be closed
+ * /
+ void close_file(int fd)
+ {
+ int u;
+
+ u = close(fd);
+if (c == -1)
+{
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+exit(100);
+}
+}
+/**
+ * main - copies contents of a file to another file
+ * @argc: number of arguments supplied
+ * @argv: array of pointers to arguments
+ * Return: 0
+ * /
+ * int main(int argc, char *argv[])
+ * {
+ * int from, to, r, w;
+ * char *buffer;
+ *
+ * if (argc != 3)
+ * {
+ * dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+ * exit(97);
+ * }
+ *
+ * buffer = create_buffer(argv[2]);
+ * from = open(argv[1], O_RDONLY);
+ * r = read(from, buffer, 1024);
+ * to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+ * {
+ * if (from == -1 || r == -1)
+ * {
+ * dprintf(STDERR_FILENO,dprintf(STDERR_FILENO,
+ * "Error: Can't read from file %s\n", argv[1]);
+ * free(buffer);
+ * exit(99);
+ * }
+ *
+ * r = read(from, buffer, 1024);
+ * to = open(argv[2], O_WRONLY | O_APPEND);
+ *
+ *} while (r > 0);
+
+ free(buffer);
+ close_file(from);
+ close_file(to);
+
+ return (0);
+ }
